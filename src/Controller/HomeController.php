@@ -23,4 +23,9 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/index.html.twig');
     }
+
+    public function match()
+    {
+        return $this->twig->render('Home/match.html.twig');
+    }
 }

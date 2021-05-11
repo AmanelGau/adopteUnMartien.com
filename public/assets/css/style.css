@@ -1,0 +1,9 @@
+body {
+    background-image: url('/assets/images/mars1.jpg');
+    background-size: 1500px;
+}
+
+#page2 {
+    background-image: url('/assets/images/mars2.jpg');
+    background-size: 1500px;
+}
