@@ -14,6 +14,15 @@ use App\Model\MatchManager;
 
 class HomeController extends AbstractController
 {
+    private array $background = [
+        "/assets/images/paysageMars1.jpg",
+        "/assets/images/paysagePlage.jpg",
+        "/assets/images/paysageCollines.jpg",
+        "/assets/images/paysageMountains.jpg",
+        "/assets/images/paysageForest1.jpg",
+        "/assets/images/paysageForest2.jpg",
+    ];
+
     /**
      * Display home page
      *
@@ -40,8 +49,8 @@ class HomeController extends AbstractController
         if (isset($_GET["robot"])) {
             $_SESSION["robot"] = $_GET["robot"];
             $_SESSION["robotImage"] = "/assets/images/robot-" . $_GET["robot"] . ".png";
+            $_SESSION["backgroundImage"] = $this->background[0];
         }
-
         if (!isset($_SESSION["image"]) || !isset($_SESSION["compatibility"])) {
             $client = HttpClient::create();
             $apiKey = "J58UsoM5RD70wuHaOM42522bR6KSyoNk";
@@ -64,7 +73,25 @@ class HomeController extends AbstractController
             'compatibility' => $_SESSION["compatibility"],
             'sentence' => $sentence,
             'robot' => $_SESSION["robot"],
-            'robotImage' => $_SESSION["robotImage"]
-            ]);
+            'robotImage' => $_SESSION["robotImage"],
+            'backgroundImage' => $_SESSION["backgroundImage"]
+        ]);
+    }
+    public function background()
+    {
+        session_start();
+        if (
+            isset($_SESSION["image"]) &&
+            isset($_SESSION["compatibility"]) &&
+            isset($_SESSION["robot"]) &&
+            isset($_SESSION["robotImage"]) &&
+            isset($_SESSION["backgroundImage"])
+        ) {
+            $nbAleatoire = rand(0, count($this->background) - 1);
+            $_SESSION["backgroundImage"] = $this->background[$nbAleatoire];
+            header("Location: /home/match");
+        } else {
+            header("Location: /");
+        }
     }
 }
