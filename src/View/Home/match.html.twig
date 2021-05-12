@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <main>
+    <main style="background-image: url('{{ backgroundImage }}')">
         <p>Vous avez {{ compatibility }} % de compatibilité !! {{ sentence }}</p>
         <img class="robot-{{ robot }}" src="{{ robotImage }}">
         <img src="{{ image }}" class="monster">
         <p>Vous pouvez retrouver votre âme soeur ici :</p>
-        <a href="/home/match/?robot=yellow">Mars</a>
+        <a href="/home/background">Mars</a>
     </main>
     
 {% endblock %}
