@@ -1,8 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Enfin de l'autre côté</h1>
-    <img class="robot-{{ robot }}" src="{{ robotImage }}">
-    <img src="{{ image }}" class="monster">
-    <p>Vous avez {{ compatibility }} % de compatibilité !! {{ sentence }}</p>
+    <main>
+        <p>Vous avez {{ compatibility }} % de compatibilité !! {{ sentence }}</p>
+        <img class="robot-{{ robot }}" src="{{ robotImage }}">
+        <img src="{{ image }}" class="monster">
+        <p>Vous pouvez retrouver votre âme soeur ici :</p>
+        <a href="/home/match/?robot=yellow">Mars</a>
+    </main>
+    
 {% endblock %}
