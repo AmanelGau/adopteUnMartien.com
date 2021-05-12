@@ -2,11 +2,17 @@
 
 {% block content %}
     <main>
-        <p>Vous avez {{ compatibility }} % de compatibilité !! {{ sentence }}</p>
-        <img class="robot-{{ robot }}" src="{{ robotImage }}">
-        <img src="{{ image }}" class="monster">
-        <p>Vous pouvez retrouver votre âme soeur ici :</p>
-        <a href="/home/match/?robot=yellow">Mars</a>
+        <div class="compatibility-block">
+            <p class="compatibility-p">Vous avez {{ compatibility }} % de compatibilité !! {{ sentence }}</p>
+        </div>
+        <div class="imgMatch">
+            <img class="robot-{{ robot }}" src="{{ robotImage }}">
+            <img src="{{ image }}" class="monster">
+        </div>
+        <div class="background-link-block">
+            <p class="background-changement">Vous pouvez retrouver votre âme soeur en cliquant :</p>
+            <a href="/home/match/?robot=yellow">ICI</a>
+        </div>
     </main>
     
 {% endblock %}
