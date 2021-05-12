@@ -16,7 +16,11 @@ class HomeController extends AbstractController
 {
     private array $background = [
         "/assets/images/paysageMars1.jpg",
-        "/assets/images/paysagePlage.jpg"
+        "/assets/images/paysagePlage.jpg",
+        "/assets/images/paysageCollines.jpg",
+        "/assets/images/paysageMountains.jpg",
+        "/assets/images/paysageForest1.jpg",
+        "/assets/images/paysageForest2.jpg",
     ];
 
     /**
