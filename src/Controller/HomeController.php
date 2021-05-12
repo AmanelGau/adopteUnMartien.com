@@ -9,6 +9,8 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpClient\HttpClient;
+
 class HomeController extends AbstractController
 {
     /**
