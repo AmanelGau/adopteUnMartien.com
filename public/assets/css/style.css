@@ -29,7 +29,6 @@ h1 {
 }
 
 .presentation {
-    border: 3px violet solid;
     display: flex;
     justify-content: flex-end;
     height: 40%;
@@ -51,10 +50,6 @@ p {
     font-size: 1.6rem;
     width: 70%;
     margin: 2% 0 0 10%;
-}
-
-.robotImage {
-    border: 3px yellow solid;
 }
 
 .robotImage img {
